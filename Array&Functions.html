@@ -1,0 +1,69 @@
+<html>
+<body>
+<center><h1><p> Program Using Array and functions </p></h1> </center>
+<label for="arlist">Enter the Array List : </label>
+<input type="text" id="arrvalues" />
+<br><br>
+<input type="button" value="Reverse" onclick="reverseof()">
+<input type="button" value="Length" onclick="lengthof()">
+<input type="button" value="Sort" onclick="sortof()">
+<input type="button" value="Slice" onclick="sliceof()">
+<input type="button" value="odd and even" onclick="odds()">
+<br>
+<h3> RESULT : </h3><p id="result" name="arlist"/><br>
+<script type="text/javascript">
+var resultarray = new Array();
+function print()
+{
+var arrayValues = document.getElementById('arrvalues').value;
+var splittedValues = arrayValues.split(',');
+for (let i = 0; i < splittedValues.length; i++) {
+resultarray[i]= splittedValues[i];
+}
+}
+
+function reverseof()
+{
+print.call();
+document.getElementById("result").innerHTML =" Reverse the given array : "+resultarray.reverse();
+}
+function lengthof()
+{
+print.call();
+document.getElementById("result").innerHTML ="Length of the array is : "+resultarray.length;
+}
+function sortof()
+{
+print.call();
+document.getElementById("result").innerHTML =" Sorting given number :" + resultarray.sort(function(a, b){return 
+a-b});
+}
+function sliceof()
+{
+print.call();
+let slice_no=parseInt(prompt("Enter No of Position to Slice"));
+document.getElementById("result").innerHTML ="The Array after slice of "+ slice_no + " : "+resultarray.slice(slice_no);
+}
+function odds()
+{
+print.call();
+var odd=0;
+var even=0;
+let n=resultarray.length;
+for(i=0;i<n;i++)
+{
+if((resultarray[i]%2)>0)
+{
+odd=odd+1;
+}
+
+else
+{
+even=even+1;
+}
+}
+document.getElementById("result").innerHTML =" Total No.of Odd Number : " + odd + " && Total No.of Even Number : "+even;
+}
+</script> 
+</body> 
+</html>
